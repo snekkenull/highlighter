@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Highlighter Settings</title>
+  <link href="../css/base.css" rel="stylesheet">
+</head>
+<body class="p-8 max-w-3xl mx-auto bg-gray-50 text-gray-800 font-sans min-h-screen">
+  <div class="bg-white shadow-lg rounded-lg p-8">
+    <h1 class="text-3xl font-bold text-primary-dark mb-8 flex items-center">
+      <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+      </svg>
+      Settings
+    </h1>
+
+    <div class="space-y-8">
+      <div class="bg-gray-50 p-6 rounded-lg space-y-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">API Configuration</h2>
+        <div class="grid gap-6">
+          <div class="form-group">
+            <label class="block text-sm font-medium text-gray-700 mb-2" for="apiKey">OpenAI API Key</label>
+            <input type="password" id="apiKey" placeholder="sk-..." class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light bg-white shadow-sm transition-all duration-200 hover:border-primary-light placeholder-gray-400">
+          </div>
+
+          <div class="form-group">
+            <label class="block text-sm font-medium text-gray-700 mb-2" for="baseUrl">API Base URL</label>
+            <input type="text" id="baseUrl" placeholder="https://api.openai.com" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light bg-white shadow-sm transition-all duration-200 hover:border-primary-light placeholder-gray-400">
+          </div>
+
+          <div class="form-group">
+            <label class="block text-sm font-medium text-gray-700 mb-2" for="model">Model</label>
+            <input type="text" id="model" placeholder="gpt-3.5-turbo" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light bg-white shadow-sm transition-all duration-200 hover:border-primary-light placeholder-gray-400">
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-lg space-y-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Highlighting Options</h2>
+        <div class="form-group">
+          <label class="block text-sm font-medium text-gray-700 mb-2" for="presetPrompt">Highlight Purpose</label>
+          <select id="presetPrompt" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-light focus:border-primary-light bg-white">
+            <option value="custom">Custom</option>
+            <option value="gre">GRE Words</option>
+            <option value="important">Important Information</option>
+            <option value="definition">Definitions</option>
+            <option value="conclusion">Conclusions</option>
+          </select>
+        </div>
+      </div>
+
+    <div class="form-group" id="customPromptGroup">
+      <label class="form-label" for="customPrompt">Custom Highlight Purpose:</label>
+      <input type="text" id="customPrompt" placeholder="e.g., technical terms, names, dates..." class="form-input">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="prompt">AI Prompt Template:</label>
+      <div class="flex gap-3">
+        <textarea id="prompt" rows="4" placeholder="Enter your custom prompt template..." class="form-input"></textarea>
+        <button id="resetPrompt" class="p-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg transition-all duration-200 hover:rotate-180" title="Reset to default template">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label flex items-center justify-between" for="highlightColor">
+        <span class="text-sm font-medium text-gray-700">Highlight Color</span>
+        <span class="text-xs text-gray-500">Click and drag to adjust</span>
+      </label>
+      <div class="flex flex-col gap-3 p-5 bg-gray-50 rounded-xl border border-gray-200 shadow-inner">
+        <div class="relative w-full h-14">
+          <div class="absolute inset-0 rounded-xl overflow-hidden" style="background: linear-gradient(to right, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8B00FF);">
+            <div class="absolute inset-0 bg-black/5"></div>
+          </div>
+          <input type="range" id="colorSlider" min="0" max="360" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+          <div id="colorIndicator" class="absolute top-1/2 -translate-y-1/2 w-5 h-10 bg-white rounded-full shadow-lg transform -translate-x-1/2 transition-all duration-200 cursor-pointer hover:shadow-xl hover:scale-110 active:scale-95">
+            <div class="absolute inset-1 rounded-full shadow-inner"></div>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-1">
+          <div class="w-3 h-3 rounded-full bg-red-500"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+          <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          <div class="w-3 h-3 rounded-full bg-blue-500"></div>
+          <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 p-6 rounded-lg space-y-6">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Whitelisted Websites</h2>
+      <div class="space-y-4">
+        <p class="text-sm text-gray-600">Only websites in this list will be automatically highlighted. Other websites require manual activation.</p>
+        <div class="flex gap-2">
+          <input type="text" id="whitelistInput" placeholder="Enter website URL (e.g., example.com)" class="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-light focus:border-primary-light">
+          <button id="addToWhitelist" class="px-4 py-2 bg-primary-light hover:bg-primary text-white font-medium rounded-lg transition-all duration-200">
+            Add
+          </button>
+        </div>
+        <div id="whitelistContainer" class="max-h-48 overflow-y-auto space-y-2 bg-white p-4 rounded-lg border border-gray-200">
+          <!-- Whitelist items will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 p-6 rounded-lg space-y-6">
+      <button class="w-full flex justify-between items-center text-left" id="advancedSettingsToggle">
+        <h2 class="text-xl font-semibold text-gray-800">Advanced Settings</h2>
+        <svg class="w-6 h-6 transform transition-transform duration-200" id="advancedSettingsIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="grid gap-6 overflow-hidden transition-all duration-200 max-h-0" id="advancedSettingsContent">
+        <div class="form-group">
+          <label class="block text-sm font-medium text-gray-700 mb-2" for="apiRateLimit">API Rate Limit (ms)</label>
+          <input type="number" id="apiRateLimit" min="1000" value="5000" placeholder="5000" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-light focus:border-primary-light">
+        </div>
+
+        <div class="form-group">
+          <label class="block text-sm font-medium text-gray-700 mb-2" for="maxCacheSize">Max Cache Size</label>
+          <input type="number" id="maxCacheSize" min="10" value="100" placeholder="100" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-light focus:border-primary-light">
+        </div>
+
+        <div class="form-group">
+          <label class="block text-sm font-medium text-gray-700 mb-2" for="maxRetries">Max API Retries</label>
+          <input type="number" id="maxRetries" min="1" value="3" placeholder="3" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-light focus:border-primary-light">
+        </div>
+        <div class="form-group">
+          <label class="block text-sm font-medium text-gray-700 mb-2" for="retryDelay">Retry Delay (ms)</label>
+          <input type="number" id="retryDelay" min="500" value="1000" placeholder="1000" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-light focus:border-primary-light">
+        </div>
+      </div>
+    </div>
+
+    <button id="save" class="w-full py-3 px-6 bg-primary-light hover:bg-primary text-white font-medium rounded-lg transition-all duration-200 shadow-sm hover:shadow-md hover:translate-y-[-2px] active:translate-y-0 relative">Save</button>
+    <div id="status" class="status-message"></div>
+  </div>
+
+  <script src="../js/options.js"></script>
+</body>
+</html>

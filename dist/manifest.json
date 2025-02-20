@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+    "name": "Highlighter",
+    "version": "1.0.0",
+    "description": "Automatically highlight key information on web pages using AI",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": {
+        "16": "assets/icon16.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
+      }
+    },
+    "background": {
+      "service_worker": "js/background.js",
+      "type": "module"
+    },
+    "web_accessible_resources": [{
+      "resources": ["css/*", "assets/*"],
+      "matches": ["<all_urls>"]
+    }],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["css/styles.css"]
+      }
+    ],
+    "options_page": "options/options.html",
+    "icons": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  }

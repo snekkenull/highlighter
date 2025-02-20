@@ -1,0 +1,24 @@
+.ai-highlight {
+  background-color: rgba(255, 255, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0 3px;
+  margin: 0 1px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.ai-highlight:hover {
+  background-color: rgba(255, 255, 0, 0.4);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.ai-highlight.important {
+  background-color: rgba(255, 182, 193, 0.2);
+}
+
+.ai-highlight.important:hover {
+  background-color: rgba(255, 182, 193, 0.4);
+}
+
+/*# sourceMappingURL=styles.css.map*/
