@@ -6,6 +6,8 @@ This browser extension automatically identifies and highlights key information o
 
 ## Preview
 
+https://github.com/snekkenull/highlighter/raw/refs/heads/main/preview.webm
+
 [Tweet](https://x.com/AnnioDance/status/1892475171182649772)
 
 ## Key Features
