@@ -2,12 +2,15 @@
 
 **Intelligently highlight important webpage content using OpenAI GPT.**
 
-This browser extension automatically identifies and highlights key information on web pages using the power of OpenAI GPT.
+This browser extension automatically identifies and highlights key information on web pages using the power of OpenAI Compatible APIs.
+
+## Preview
+[Tweet](https://x.com/AnnioDance/status/1892466321767473361)
 
 ## Key Features
 
 - **Intelligent Content Highlighting:** Automatically identifies and highlights important content on web pages.
-- **OpenAI GPT Powered:** Leverages OpenAI GPT for intelligent content analysis.
+- **OpenAI API BASE:** Using the OpenAI API format with any providers for intelligent content analysis.
 - **Website Whitelist:** Manage which websites the extension operates on.
 - **Customizable Highlighting:**  Personalize highlight colors and animation effects.
 - **Local Cache:** Improves performance by locally caching highlighting results.
@@ -17,12 +20,12 @@ This browser extension automatically identifies and highlights key information o
 
 - git clone or download this repo to unextract the `dist` folder to local disk.
 
-- Chrome Browser, Open `chrome://extensions/`, Choose `Load Unpacked` and select the dist folder.
+- Chrome Browser, Open `chrome://extensions/`, Choose `Load Unpacked` and select the `dist` folder.
 
 ## Configuration
 
 1. After installing the extension, click the extension icon to access the settings page.
-2. Enter your OpenAI API Key.
+2. Enter your provider's API Key.
 3. Configure the following options:
    - API Base URL (Default: https://api.openai.com)
    - GPT Model (Default: gpt-3.5-turbo)
@@ -56,4 +59,4 @@ This browser extension automatically identifies and highlights key information o
 
 
 ## Development Tools
-[TraeAI](https://trae.ai)
+Mode with [TraeAI](https://trae.ai)
