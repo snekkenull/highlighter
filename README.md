@@ -6,7 +6,7 @@ This browser extension automatically identifies and highlights key information o
 
 ## Preview
 
-[Tweet](https://x.com/AnnioDance/status/1892475171182649772)
+![Preview](preview.gif)
 
 ## Key Features
 
