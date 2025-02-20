@@ -5,7 +5,7 @@
 This browser extension automatically identifies and highlights key information on web pages using the power of OpenAI Compatible APIs.
 
 ## Preview
-[Tweet](https://x.com/AnnioDance/status/1892466321767473361)
+[Tweet](https://x.com/AnnioDance/status/1892475171182649772)
 
 ## Key Features
 
